@@ -1,0 +1,548 @@
+@prefix : <http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#> .
+
+<http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species> rdf:type owl:Ontology ;
+                                                                          rdfs:comment "By Héctor Herrero Bernal" ,
+                                                                                       "DoctorWho Species" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2000/01/rdf-schema#sameAs
+rdfs:sameAs rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#hasPlanetOfOrigin
+:hasPlanetOfOrigin rdf:type owl:ObjectProperty ,
+                            owl:AsymmetricProperty ;
+                   rdfs:domain :Species ;
+                   rdfs:range :Planet ;
+                   rdfs:comment "Contiene el planeta de origen de la especie." .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#hasTechnologicalLevel
+:hasTechnologicalLevel rdf:type owl:ObjectProperty ,
+                                owl:AsymmetricProperty ;
+                       rdfs:domain :Species ;
+                       rdfs:range :TechnologicalLevel ;
+                       rdfs:comment "Representa el nivel tecnológico de una especie." .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#hasChanceOfAttack
+:hasChanceOfAttack rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Species ;
+                   rdfs:range xsd:integer ;
+                   rdfs:comment "Representa la probabilidad de que un espécimen de una especie ataque de forma no provocada." .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#hasPopulation
+:hasPopulation rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Species ;
+               rdfs:range xsd:long ;
+               rdfs:comment "Contiene el número de especímenes que hay actualmente de la especie." .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#AdvancedTechnologicalLevel
+:AdvancedTechnologicalLevel rdf:type owl:Class ;
+                            rdfs:subClassOf :TechnologicalLevel ;
+                            rdfs:comment "Representa un nivel tecnológico avanzado (Avances tecnológicos muy significativos, como viajes temporales o espaciales)." .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Aggresive
+:Aggresive rdf:type owl:Class ;
+           rdfs:subClassOf :Behaviour ;
+           owl:disjointWith :Passive ;
+           rdfs:comment "Una especie se comporta de manera agresiva si ataca sin provocación." .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Alive
+:Alive rdf:type owl:Class ;
+       rdfs:subClassOf :Population ;
+       owl:disjointWith :Extinct ;
+       rdfs:comment "La especie sigue viva a día de hoy." .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Behaviour
+:Behaviour rdf:type owl:Class ;
+           rdfs:subClassOf :SpeciesFeatures ;
+           rdfs:comment "Define como se comporta una especie." .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Cybermen
+:Cybermen rdf:type owl:Class ;
+          rdfs:subClassOf :Cyborg ;
+          rdfs:comment "Los Cybermen eran originalmente una especie completamente orgánica de humanoides creados en un universo paralelo, en un planeta gemelo de la Tierra, llamado Mondas y que comenzaron a implantarse más y más partes artificiales en el cuerpo con el objetivo de autopreservar la especie. Esto hizo que la raza se convirtiera en lógica y calculadora, mostrando emociones únicamente cuando había agresividad pura." .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Cyborg
+:Cyborg rdf:type owl:Class ;
+        rdfs:subClassOf :Species ;
+        rdfs:comment "Son seres compuestos de elementos orgánicos y dispositivos cibernéticos." .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Dalek
+:Dalek rdf:type owl:Class ;
+       rdfs:subClassOf :Cyborg ;
+       rdfs:comment "Los Daleks son una raza mutante extraterrestre ficticia basada en los nazis." .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Extinct
+:Extinct rdf:type owl:Class ;
+         rdfs:subClassOf :Population ;
+         rdfs:comment "La especie está extinta." .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Human
+:Human rdf:type owl:Class ;
+       rdfs:subClassOf :Humanoid ;
+       rdfs:comment "El Homo sapiens, hombre o ser humano es una especie del orden de los primates perteneciente a la familia de los homínidos." .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Humanoid
+:Humanoid rdf:type owl:Class ;
+          rdfs:subClassOf :Species ;
+          rdfs:comment "Ser con forma o características humanas." .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#IceWarrior
+:IceWarrior rdf:type owl:Class ;
+            rdfs:subClassOf :Reptilian ;
+            rdfs:comment "Los Guerreros de Hielo y Señores de Hielo fueron una especie de humanoides reptiles que procedían del planeta Marte. También podrían considerarse cyborgs, ya que cuentan con una armadura cibertrónica. Actualmente sólo se conoce la existencia de un especimen vivo." .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#IntermidiateTechnologicalLevel
+:IntermidiateTechnologicalLevel rdf:type owl:Class ;
+                                rdfs:subClassOf :TechnologicalLevel ;
+                                rdfs:comment "Representa un nivel tecnológico intermedio (Avances tecnológicos importantes pero con mucho que descubrir)." .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#LowTechnologicalLevel
+:LowTechnologicalLevel rdf:type owl:Class ;
+                       rdfs:subClassOf :TechnologicalLevel ;
+                       rdfs:comment "Representa un nivel tecnológico bajo (apenas hay avances tecnológicos o se trata de especies sin conocimiento)." .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Passive
+:Passive rdf:type owl:Class ;
+         rdfs:subClassOf :Behaviour ;
+         rdfs:comment "Una especie pasiva no ataca sin provocación." .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Planet
+:Planet rdf:type owl:Class ;
+        rdfs:comment "Cuerpo celeste sólido que gira alrededor de una estrella y que no emite luz propia. En este caso, cada planeta será el origen de una o varias especies." .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Population
+:Population rdf:type owl:Class ;
+            rdfs:subClassOf :SpeciesFeatures ;
+            rdfs:comment "Representa la población de una especie." .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Reptilian
+:Reptilian rdf:type owl:Class ;
+           rdfs:subClassOf :Species ;
+           rdfs:comment "Una mezcla entre humanoides y reptiles." .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Silurian
+:Silurian rdf:type owl:Class ;
+          rdfs:subClassOf :Reptilian ;
+          rdfs:comment "Los Silurians son una raza humanoides reptiles. Los primeros Silurians que aparecieron se mostraron como humanoides prehistóricos y científicamente avanzados que precedieron al hombre como dominadores de la Tierra. En su historia, los Silurians entraron ellos mismos en hibernación para sobrevivir a lo que ellos predecían sería un gran cataclismo geológico causado por la llegada de la Luna." .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Sontaran
+:Sontaran rdf:type owl:Class ;
+          rdfs:subClassOf :Humanoid ;
+          rdfs:comment "Los sontarans son una raza de humanoides de constitución bajita pero fornida, piel verde marronaceo y una característica cabeza aplastada. Además, solo tienen tres dedos en cada mano. Sus músculos especiales están diseñados para soportar el peso más que para hacer fuerza, por el gran índice de gravedad de su planeta natal, Sontar." .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Species
+:Species rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasPlanetOfOrigin ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass :Planet
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasTechnologicalLevel ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass :TechnologicalLevel
+                         ] ;
+         rdfs:comment "Representa una especie de alienígena de Doctor Who." .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#SpeciesFeatures
+:SpeciesFeatures rdf:type owl:Class ;
+                 rdfs:comment "Define las características de una especie." .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Statue
+:Statue rdf:type owl:Class ;
+        rdfs:subClassOf :Species ;
+        rdfs:comment "Estatuas u objetos aparentemente inanimados." .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#TechnologicalLevel
+:TechnologicalLevel rdf:type owl:Class ;
+                    rdfs:subClassOf :SpeciesFeatures ;
+                    rdfs:comment "Representa el nivel de avances tecnológicos que tiene una especie." .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Threat
+:Threat rdf:type owl:Class ;
+        owl:equivalentClass [ owl:intersectionOf ( :Aggresive
+                                                   :Alive
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] ;
+        rdfs:subClassOf :SpeciesFeatures ;
+        rdfs:comment "Si una especie es agresiva y además no está extinta, será una amenaza." .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Timelord
+:Timelord rdf:type owl:Class ;
+          rdfs:subClassOf :Humanoid ;
+          rdfs:comment "Los Señores del Tiempo son una antigua raza de extraterrestres de la que forma parte el protagonista de la serie, el Doctor. Los Señores del Tiempo se llaman así por su dominio de la tecnología de los viajes en el tiempo y su percepción no lineal del tiempo. Originalmente, se les describía como una raza poderosa y sabia del planeta Gallifrey, del que el Doctor era un renegado. El Doctor es el último superviviente de la raza." .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#WeepingAngel
+:WeepingAngel rdf:type owl:Class ;
+              rdfs:subClassOf :Statue ;
+              rdfs:comment "Los ángeles llorones son una raza de alienígenas que atribuye su apariencia a juegos infantiles como el escondite inglés y juega con la idea de que toda estatua es un ángel lloroso en secreto. Su modo habitual de alimentarse es enviar a sus víctimas atrás en el tiempo, lo que crea energía temporal de la que se alimentan. Cuando no son observados, pueden moverse muy rápida y silenciosamente, pero cuando alguien les mira se \"encierran cuánticamente\", ocupando una posición fija en el espacio y convirtiéndose en piedra. En este estado, están congelados y son difíciles de destruir. No pueden evitar esta reacción. Si dos ángeles llorosos se miraran el uno al otro al mismo tiempo (o uno se viera a sí mismo en un espejo), se quedarían convertidos en piedra hasta que otra fuerza exterior les moviera. Para evitar esto, suelen cubrirse los ojos al moverse, lo que les hace parecer como si estuvieran llorando." .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#advanced_technological_level
+:advanced_technological_level rdf:type owl:NamedIndividual ,
+                                       :AdvancedTechnologicalLevel .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#an_unearthly_child
+:an_unearthly_child rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#blink
+:blink rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#cybermen
+:cybermen rdf:type owl:NamedIndividual ,
+                   :Cybermen ;
+          :hasPlanetOfOrigin :mondas ;
+          :hasTechnologicalLevel :advanced_technological_level ;
+          :hasChanceOfAttack 100 ;
+          :hasPopulation 0 .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#daleks
+:daleks rdf:type owl:NamedIndividual ,
+                 :Dalek ;
+        :hasPlanetOfOrigin :skaro ;
+        :hasTechnologicalLevel :advanced_technological_level ;
+        :hasChanceOfAttack 100 ;
+        :hasPopulation 0 .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#doctor_who_and_the_cave_monsters
+:doctor_who_and_the_cave_monsters rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#earth
+:earth rdf:type owl:NamedIndividual ,
+                :Planet .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#earth_humans
+:earth_humans rdf:type owl:NamedIndividual ,
+                       :Human ;
+              :hasPlanetOfOrigin :earth ;
+              :hasTechnologicalLevel :intermediate_technological_level ;
+              :hasChanceOfAttack 40 ;
+              :hasPopulation 7000000000 .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#gallifrey
+:gallifrey rdf:type owl:NamedIndividual ,
+                    :Planet .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#ice_warriors
+:ice_warriors rdf:type owl:NamedIndividual ,
+                       :IceWarrior ;
+              :hasPlanetOfOrigin :mars ;
+              :hasTechnologicalLevel :advanced_technological_level ;
+              :hasChanceOfAttack 80 ;
+              :hasPopulation 1 .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#intermediate_technological_level
+:intermediate_technological_level rdf:type owl:NamedIndividual ,
+                                           :IntermidiateTechnologicalLevel .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#low_technological_level
+:low_technological_level rdf:type owl:NamedIndividual ,
+                                  :LowTechnologicalLevel .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#mars
+:mars rdf:type owl:NamedIndividual ,
+               :Planet .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#mondas
+:mondas rdf:type owl:NamedIndividual ,
+                 :Planet .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#silurians
+:silurians rdf:type owl:NamedIndividual ,
+                    :Silurian ;
+           :hasPlanetOfOrigin :earth ;
+           :hasTechnologicalLevel :advanced_technological_level ;
+           :hasChanceOfAttack 30 ;
+           :hasPopulation 4000000 .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#skaro
+:skaro rdf:type owl:NamedIndividual ,
+                :Planet .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#sontar
+:sontar rdf:type owl:NamedIndividual ,
+                 :Planet .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#sontarans
+:sontarans rdf:type owl:NamedIndividual ,
+                    :Sontaran ;
+           :hasPlanetOfOrigin :sontar ;
+           :hasTechnologicalLevel :advanced_technological_level ;
+           :hasChanceOfAttack 80 ;
+           :hasPopulation 4000000 .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#the_dead_planet
+:the_dead_planet rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#the_ice_warriors
+:the_ice_warriors rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#the_tenth_planet
+:the_tenth_planet rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#the_time_warrior
+:the_time_warrior rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#timelords
+:timelords rdf:type owl:NamedIndividual ,
+                    :Timelord ;
+           :hasPlanetOfOrigin :gallifrey ;
+           :hasTechnologicalLevel :advanced_technological_level ;
+           :hasChanceOfAttack 0 ;
+           :hasPopulation 1 .
+
+
+###  http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#weeping_angels
+:weeping_angels rdf:type owl:NamedIndividual ,
+                         :WeepingAngel ;
+                :hasPlanetOfOrigin :earth ;
+                :hasTechnologicalLevel :low_technological_level ;
+                :hasChanceOfAttack 100 ;
+                :hasPopulation 100 .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :AdvancedTechnologicalLevel
+                :IntermidiateTechnologicalLevel
+                :LowTechnologicalLevel
+              )
+] .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+<urn:swrl:var#s> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#c> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#p> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasChanceOfAttack ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#s> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#c>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#lessThan> ;
+                                                                  <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                               rdf:first <urn:swrl:var#c> ;
+                                                                                                               rdf:rest [ rdf:type rdf:List ;
+                                                                                                                          rdf:first 51 ;
+                                                                                                                          rdf:rest rdf:nil
+                                                                                                                        ]
+                                                                                                             ]
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :Species ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#s>
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Passive ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#s>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThan> ;
+                                                       <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                    rdf:first <urn:swrl:var#c> ;
+                                                                                                    rdf:rest [ rdf:type rdf:List ;
+                                                                                                               rdf:first 50 ;
+                                                                                                               rdf:rest rdf:nil
+                                                                                                             ]
+                                                                                                  ]
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasChanceOfAttack ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#s> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#c>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :Species ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#s>
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Aggresive ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#s>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#equal> ;
+                                                       <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                    rdf:first <urn:swrl:var#p> ;
+                                                                                                    rdf:rest [ rdf:type rdf:List ;
+                                                                                                               rdf:first 0 ;
+                                                                                                               rdf:rest rdf:nil
+                                                                                                             ]
+                                                                                                  ]
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasPopulation ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#s> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#p>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :Species ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#s>
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Extinct ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#s>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThan> ;
+                                                       <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                    rdf:first <urn:swrl:var#p> ;
+                                                                                                    rdf:rest [ rdf:type rdf:List ;
+                                                                                                               rdf:first 0 ;
+                                                                                                               rdf:rest rdf:nil
+                                                                                                             ]
+                                                                                                  ]
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasPopulation ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#s> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#p>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :Species ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#s>
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Alive ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#s>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

@@ -1,0 +1,104 @@
+{
+  "@context" : {
+    "Cybermen" : {
+      "@id" : "http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Cybermen"
+    },
+    "Extinct" : {
+      "@id" : "http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Extinct"
+    },
+    "TechnologicalLevel" : {
+      "@id" : "http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#TechnologicalLevel"
+    },
+    "IceWarrior" : {
+      "@id" : "http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#IceWarrior"
+    },
+    "Cyborg" : {
+      "@id" : "http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Cyborg"
+    },
+    "Human" : {
+      "@id" : "http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Human"
+    },
+    "Aggresive" : {
+      "@id" : "http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Aggresive"
+    },
+    "Timelord" : {
+      "@id" : "http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Timelord"
+    },
+    "Statue" : {
+      "@id" : "http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Statue"
+    },
+    "hasPopulation" : {
+      "@id" : "http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#hasPopulation",
+      "@type" : "http://www.w3.org/2001/XMLSchema#long"
+    },
+    "IntermidiateTechnologicalLevel" : {
+      "@id" : "http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#IntermidiateTechnologicalLevel"
+    },
+    "Passive" : {
+      "@id" : "http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Passive"
+    },
+    "Population" : {
+      "@id" : "http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Population"
+    },
+    "WeepingAngel" : {
+      "@id" : "http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#WeepingAngel"
+    },
+    "SpeciesFeatures" : {
+      "@id" : "http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#SpeciesFeatures"
+    },
+    "hasTechnologicalLevel" : {
+      "@id" : "http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#hasTechnologicalLevel",
+      "@type" : "@id"
+    },
+    "Silurian" : {
+      "@id" : "http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Silurian"
+    },
+    "Planet" : {
+      "@id" : "http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Planet"
+    },
+    "hasPlanetOfOrigin" : {
+      "@id" : "http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#hasPlanetOfOrigin",
+      "@type" : "@id"
+    },
+    "Alive" : {
+      "@id" : "http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Alive"
+    },
+    "Threat" : {
+      "@id" : "http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Threat"
+    },
+    "hasChanceOfAttack" : {
+      "@id" : "http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#hasChanceOfAttack",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "Dalek" : {
+      "@id" : "http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Dalek"
+    },
+    "Behaviour" : {
+      "@id" : "http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Behaviour"
+    },
+    "Sontaran" : {
+      "@id" : "http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Sontaran"
+    },
+    "sameAs" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#sameAs"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "Species" : {
+      "@id" : "http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Species"
+    },
+    "Humanoid" : {
+      "@id" : "http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Humanoid"
+    },
+    "Reptilian" : {
+      "@id" : "http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Reptilian"
+    },
+    "AdvancedTechnologicalLevel" : {
+      "@id" : "http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#AdvancedTechnologicalLevel"
+    },
+    "LowTechnologicalLevel" : {
+      "@id" : "http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#LowTechnologicalLevel"
+    }
+  }
+}
