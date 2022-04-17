@@ -1,0 +1,896 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#"
+     xml:base="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:doctor-who-species="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species">
+        <rdfs:comment>By Héctor Herrero Bernal</rdfs:comment>
+        <rdfs:comment>DoctorWho Species</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#sameAs -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#sameAs"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#hasPlanetOfOrigin -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#hasPlanetOfOrigin">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Species"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Planet"/>
+        <rdfs:comment>Contiene el planeta de origen de la especie.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#hasTechnologicalLevel -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#hasTechnologicalLevel">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Species"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#TechnologicalLevel"/>
+        <rdfs:comment>Representa el nivel tecnológico de una especie.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#hasChanceOfAttack -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#hasChanceOfAttack">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Species"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Representa la probabilidad de que un espécimen de una especie ataque de forma no provocada.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#hasPopulation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#hasPopulation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Species"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+        <rdfs:comment>Contiene el número de especímenes que hay actualmente de la especie.</rdfs:comment>
+        <rdfs:sameAs rdf:resource="https://dbpedia.org/ontology/populationTotal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#AdvancedTechnologicalLevel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#AdvancedTechnologicalLevel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#TechnologicalLevel"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Representa un nivel tecnológico avanzado (Avances tecnológicos muy significativos, como viajes temporales o espaciales).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Aggresive -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Aggresive">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Behaviour"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Passive"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Una especie se comporta de manera agresiva si ataca sin provocación.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Alive -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Alive">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Population"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Extinct"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La especie sigue viva a día de hoy.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Behaviour -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Behaviour">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#SpeciesFeatures"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Define como se comporta una especie.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Cybermen -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Cybermen">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Cyborg"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Los Cybermen eran originalmente una especie completamente orgánica de humanoides creados en un universo paralelo, en un planeta gemelo de la Tierra, llamado Mondas y que comenzaron a implantarse más y más partes artificiales en el cuerpo con el objetivo de autopreservar la especie. Esto hizo que la raza se convirtiera en lógica y calculadora, mostrando emociones únicamente cuando había agresividad pura.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Cyborg -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Cyborg">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Species"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Son seres compuestos de elementos orgánicos y dispositivos cibernéticos.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Dalek -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Dalek">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Cyborg"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Los Daleks son una raza mutante extraterrestre ficticia basada en los nazis.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Extinct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Extinct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Population"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La especie está extinta.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Human -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Human">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Humanoid"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">El Homo sapiens, hombre o ser humano es una especie del orden de los primates perteneciente a la familia de los homínidos.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Humanoid -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Humanoid">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Species"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ser con forma o características humanas.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#IceWarrior -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#IceWarrior">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Reptilian"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Los Guerreros de Hielo y Señores de Hielo fueron una especie de humanoides reptiles que procedían del planeta Marte. También podrían considerarse cyborgs, ya que cuentan con una armadura cibertrónica. Actualmente sólo se conoce la existencia de un especimen vivo.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#IntermidiateTechnologicalLevel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#IntermidiateTechnologicalLevel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#TechnologicalLevel"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Representa un nivel tecnológico intermedio (Avances tecnológicos importantes pero con mucho que descubrir).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#LowTechnologicalLevel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#LowTechnologicalLevel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#TechnologicalLevel"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Representa un nivel tecnológico bajo (apenas hay avances tecnológicos o se trata de especies sin conocimiento).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Passive -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Passive">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Behaviour"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Una especie pasiva no ataca sin provocación.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Planet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Planet">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cuerpo celeste sólido que gira alrededor de una estrella y que no emite luz propia. En este caso, cada planeta será el origen de una o varias especies.</rdfs:comment>
+        <rdfs:sameAs rdf:resource="https://dbpedia.org/ontology/Planet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Population -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Population">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#SpeciesFeatures"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Representa la población de una especie.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Reptilian -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Reptilian">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Species"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Una mezcla entre humanoides y reptiles.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Silurian -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Silurian">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Reptilian"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Los Silurians son una raza humanoides reptiles. Los primeros Silurians que aparecieron se mostraron como humanoides prehistóricos y científicamente avanzados que precedieron al hombre como dominadores de la Tierra. En su historia, los Silurians entraron ellos mismos en hibernación para sobrevivir a lo que ellos predecían sería un gran cataclismo geológico causado por la llegada de la Luna.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Sontaran -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Sontaran">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Humanoid"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Los sontarans son una raza de humanoides de constitución bajita pero fornida, piel verde marronaceo y una característica cabeza aplastada. Además, solo tienen tres dedos en cada mano. Sus músculos especiales están diseñados para soportar el peso más que para hacer fuerza, por el gran índice de gravedad de su planeta natal, Sontar.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Species -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Species">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#hasPlanetOfOrigin"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Planet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#hasTechnologicalLevel"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#TechnologicalLevel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Representa una especie de alienígena de Doctor Who.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#SpeciesFeatures -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#SpeciesFeatures">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Define las características de una especie.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Statue -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Statue">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Species"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estatuas u objetos aparentemente inanimados.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#TechnologicalLevel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#TechnologicalLevel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#SpeciesFeatures"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Representa el nivel de avances tecnológicos que tiene una especie.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Threat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Threat">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Aggresive"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Alive"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#SpeciesFeatures"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Si una especie es agresiva y además no está extinta, será una amenaza.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Timelord -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Timelord">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Humanoid"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Los Señores del Tiempo son una antigua raza de extraterrestres de la que forma parte el protagonista de la serie, el Doctor. Los Señores del Tiempo se llaman así por su dominio de la tecnología de los viajes en el tiempo y su percepción no lineal del tiempo. Originalmente, se les describía como una raza poderosa y sabia del planeta Gallifrey, del que el Doctor era un renegado. El Doctor es el último superviviente de la raza.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#WeepingAngel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#WeepingAngel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Statue"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Los ángeles llorones son una raza de alienígenas que atribuye su apariencia a juegos infantiles como el escondite inglés y juega con la idea de que toda estatua es un ángel lloroso en secreto. Su modo habitual de alimentarse es enviar a sus víctimas atrás en el tiempo, lo que crea energía temporal de la que se alimentan. Cuando no son observados, pueden moverse muy rápida y silenciosamente, pero cuando alguien les mira se &quot;encierran cuánticamente&quot;, ocupando una posición fija en el espacio y convirtiéndose en piedra. En este estado, están congelados y son difíciles de destruir. No pueden evitar esta reacción. Si dos ángeles llorosos se miraran el uno al otro al mismo tiempo (o uno se viera a sí mismo en un espejo), se quedarían convertidos en piedra hasta que otra fuerza exterior les moviera. Para evitar esto, suelen cubrirse los ojos al moverse, lo que les hace parecer como si estuvieran llorando.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#advanced_technological_level -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#advanced_technological_level">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#AdvancedTechnologicalLevel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#an_unearthly_child -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#an_unearthly_child"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#blink -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#blink"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#cybermen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#cybermen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Cybermen"/>
+        <hasPlanetOfOrigin rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#mondas"/>
+        <hasTechnologicalLevel rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#advanced_technological_level"/>
+        <hasChanceOfAttack rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</hasChanceOfAttack>
+        <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#daleks -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#daleks">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Dalek"/>
+        <hasPlanetOfOrigin rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#skaro"/>
+        <hasTechnologicalLevel rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#advanced_technological_level"/>
+        <hasChanceOfAttack rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</hasChanceOfAttack>
+        <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#doctor_who_and_the_cave_monsters -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#doctor_who_and_the_cave_monsters"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#earth -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#earth">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Planet"/>
+        <rdfs:sameAs rdf:resource="https://dbpedia.org/page/Earth"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#earth_humans -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#earth_humans">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Human"/>
+        <hasPlanetOfOrigin rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#earth"/>
+        <hasTechnologicalLevel rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#intermediate_technological_level"/>
+        <hasChanceOfAttack rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">40</hasChanceOfAttack>
+        <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7000000000</hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#gallifrey -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#gallifrey">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Planet"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#ice_warriors -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#ice_warriors">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#IceWarrior"/>
+        <hasPlanetOfOrigin rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#mars"/>
+        <hasTechnologicalLevel rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#advanced_technological_level"/>
+        <hasChanceOfAttack rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">80</hasChanceOfAttack>
+        <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#intermediate_technological_level -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#intermediate_technological_level">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#IntermidiateTechnologicalLevel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#low_technological_level -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#low_technological_level">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#LowTechnologicalLevel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#mars -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#mars">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Planet"/>
+        <rdfs:sameAs rdf:resource="https://dbpedia.org/page/Mars"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#mondas -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#mondas">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Planet"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#silurians -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#silurians">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Silurian"/>
+        <hasPlanetOfOrigin rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#earth"/>
+        <hasTechnologicalLevel rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#advanced_technological_level"/>
+        <hasChanceOfAttack rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</hasChanceOfAttack>
+        <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4000000</hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#skaro -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#skaro">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Planet"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#sontar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#sontar">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Planet"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#sontarans -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#sontarans">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Sontaran"/>
+        <hasPlanetOfOrigin rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#sontar"/>
+        <hasTechnologicalLevel rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#advanced_technological_level"/>
+        <hasChanceOfAttack rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">80</hasChanceOfAttack>
+        <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4000000</hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#the_dead_planet -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#the_dead_planet"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#the_ice_warriors -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#the_ice_warriors"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#the_tenth_planet -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#the_tenth_planet"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#the_time_warrior -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#the_time_warrior"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#timelords -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#timelords">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Timelord"/>
+        <hasPlanetOfOrigin rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#gallifrey"/>
+        <hasTechnologicalLevel rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#advanced_technological_level"/>
+        <hasChanceOfAttack rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasChanceOfAttack>
+        <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#weeping_angels -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#weeping_angels">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#WeepingAngel"/>
+        <hasPlanetOfOrigin rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#earth"/>
+        <hasTechnologicalLevel rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#low_technological_level"/>
+        <hasChanceOfAttack rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</hasChanceOfAttack>
+        <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#AdvancedTechnologicalLevel"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#IntermidiateTechnologicalLevel"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#LowTechnologicalLevel"/>
+        </owl:members>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="urn:swrl:var#c">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#s">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#p">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                        <swrl:arguments>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:resource="urn:swrl:var#c"/>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </swrl:arguments>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#hasChanceOfAttack"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#s"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#c"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Species"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#s"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Aggresive"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#s"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#hasChanceOfAttack"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#s"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#c"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+                                <swrl:arguments>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:resource="urn:swrl:var#c"/>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">51</rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </swrl:arguments>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Species"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#s"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Passive"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#s"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#equal"/>
+                        <swrl:arguments>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:resource="urn:swrl:var#p"/>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </swrl:arguments>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#hasPopulation"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#s"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#p"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Species"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#s"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Extinct"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#s"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                        <swrl:arguments>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:resource="urn:swrl:var#p"/>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </swrl:arguments>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#hasPopulation"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#s"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#p"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Species"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#s"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/hector/ontologies/2022/3/doctor-who-species#Alive"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#s"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
